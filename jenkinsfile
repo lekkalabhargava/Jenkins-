@@ -1,0 +1,24 @@
+node {
+     stage('clone'){
+	     git@github.com:lekkalabhargava/Jenkins-.git'
+         }
+    stage('Maven clean') {
+      sh 'mvn clean' 
+    }
+    stage('Maven validate') {
+      sh 'mvn validate'
+    }
+    stage('Maven compile') {
+      sh 'mvn compile' 
+    }
+    stage('Maven test') {
+      sh 'mvn test'
+    }
+    stage('Maven package') {
+      sh 'mvn package'
+	}
+	stage('Maven deploy') {
+      sh 'mvn deploy'
+	}
+}
+
